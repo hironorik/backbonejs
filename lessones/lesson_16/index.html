@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>lesson16</title>
+
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>LESSON 16</h1>
+
+  <h2>Tasks</h2>
+
+  <form id="addTask">
+    <input type="text" id="title">
+    <input type="submit" value="add">
+  </form>
+
+  <div id="tasks"></div>
+
+  <script type="text/template" id="template-task">
+    <input type="checkbox" class="toggle" <%- completed ? 'checked' : '' %>>
+    <span class="<%- completed ? 'completed' : '' %>">
+      <%- title %>
+    </span>
+    <span class="delete">[x]</span>
+  </script>
+
+  <script src="../shared/js/jquery.js"></script>
+  <script src="../shared/js/underscore.js"></script>
+  <script src="../shared/js/backbone-min.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
